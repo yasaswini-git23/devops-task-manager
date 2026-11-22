@@ -259,18 +259,7 @@ Through this project, the following DevOps capabilities were implemented and dem
 - Deployed and validated a containerized application on AWS EC2.
 - Implemented application health verification.
 
-## 13. Future Enhancements
-
-Potential improvements to the project include:
-
-- Automating application deployment to EC2 through CI/CD.
-- Implementing infrastructure provisioning using Terraform.
-- Adding persistent database storage.
-- Integrating monitoring and logging.
-- Configuring HTTPS and a custom domain.
-- Implementing container health monitoring and automated recovery.
-
-## 14. AI Assistance
+## 13. AI Assistance
 
 Representative prompts used for AI-assisted implementation and troubleshooting:
 
