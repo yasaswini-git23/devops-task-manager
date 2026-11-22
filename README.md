@@ -228,3 +228,18 @@ The project was completed using available cloud resources and alternative toolin
 **Container environment:** Docker was configured on the cloud virtual machine rather than the corporate laptop.
 **Deployment:** The application was deployed directly to EC2 using Docker. Deployment is currently a manual step; the GitHub Actions workflow automates testing and Docker image publishing.
 These alternatives enabled the application delivery and deployment workflow to be completed despite the environment and access limitations.
+
+## Key Outcomes
+
+Implemented automated application testing.
+Built and managed Docker images and containers.
+Created a multi-job CI/CD workflow using GitHub Actions.
+Published container images to Docker Hub.
+Deployed and validated a containerized application on AWS EC2.
+---
+
+
+**Repository:** [devops-task-manager](https://github.com/yasaswini-git23/devops-task-manager)
+
+
+**Project focus:** Application delivery, containerization, CI/CD automation, and cloud deployment.
