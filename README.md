@@ -1,7 +1,5 @@
 # DevOps Task Manager
 ### Containerized Flask Application | CI/CD | AWS EC2
-# DevOps Task Manager
-### Containerized Flask Application | CI/CD | AWS EC2
 
 
 A containerized task management application built with Python Flask and delivered through an automated CI/CD pipeline using GitHub Actions, Docker, Docker Hub, and AWS EC2.
