@@ -21,7 +21,7 @@ The project covers:
 - Cloud deployment using AWS EC2
 - Application health verification
 
-## Architecture
+## 2. Architecture
 
 The project consists of two main workflows: CI/CD and application deployment.
 
@@ -55,16 +55,17 @@ AWS EC2 Instance
 (Amazon Linux 2023)
       |
       v
+EC2 Port 80
+      |
+      v
 Docker Container
       |
       v
 Flask Task Manager
 (Container Port: 5000)
-      |
-      v
-EC2 Port 80
 ```
 
+The Flask application runs inside a Docker container on port 5000. Docker maps the container port to port 80 on the EC2 instance, allowing users to access the application through the EC2 public IPv4 address.
 
 ## 3. Technology Stack
 
@@ -91,7 +92,7 @@ Key features:
 - Mark tasks as completed.
 - Check application availability through a health endpoint.
 
-### Application Endpoints
+**Application Endpoints**
 
 | Endpoint | Method | Purpose |
 |---|---|---|
@@ -99,6 +100,8 @@ Key features:
 | `/tasks` | POST | Creates a new task |
 | `/tasks/<task_id>/complete` | POST | Marks a task as completed |
 | `/health` | GET | Returns application health status |
+
+**Note:** Task data is maintained in application memory and is not persisted across application restarts.
 
 ## 5. Repository Structure
 
@@ -206,27 +209,33 @@ The image can be retrieved using:
 docker pull yasaswinidocker123/devops-task-manager:latest
 ```
 
+The Docker Hub repository contains the published application image and its available tags.
+
 ## 9. AWS EC2 Deployment
 
-Connected to the EC2 virtual machine through SSH.
+The containerized application is hosted on an AWS EC2 instance running Amazon Linux 2023.
 
 ### Deployment Activities
 
 1. Provisioned an EC2 instance through the AWS Management Console.
-2. Connected to the virtual machine using EC2 Instance Connect.
+2. Connected to the EC2 virtual machine through SSH using the downloaded key pair.
 3. Configured Docker on the Amazon Linux 2023 environment.
 4. Retrieved the application source code from GitHub.
 5. Built and ran the Docker container.
 6. Configured network access through the EC2 security group.
-7. Verified application accessibility using the EC2 public IPv4 address.
+7. Verified the application and health endpoint using AWS CloudShell.
 
 ### Application Access
 
 **Application URL:**
+
 http://16.178.218.36/
 
 **Health Check URL:**
+
 http://16.178.218.36/health
+
+**Note:** These URLs use the EC2 instance's public IPv4 address at the time of deployment. The address may change if the instance is stopped and restarted.
 
 ## 10. Validation Results
 
