@@ -214,8 +214,6 @@ The containerized application is hosted on an AWS EC2 instance.
 **Health Check URL:**
 (https://16.178.218.36/health)
 
-Replace `YOUR_EC2_PUBLIC_IPV4` with the actual public IPv4 address of the EC2 instance.
-
 ## 10. Validation Results
 
 The following implementation checks were successfully completed:
