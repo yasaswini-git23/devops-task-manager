@@ -65,8 +65,6 @@ Flask Task Manager
 EC2 Port 80
 ```
 
-The Docker container runs the Flask application on port 5000, mapped to port 80 on the EC2 instance.
-
 
 ## 3. Technology Stack
 
@@ -210,7 +208,7 @@ docker pull yasaswinidocker123/devops-task-manager:latest
 
 ## 9. AWS EC2 Deployment
 
-The containerized application is hosted on an AWS EC2 instance.
+Connected to the EC2 virtual machine through SSH.
 
 ### Deployment Activities
 
@@ -225,10 +223,10 @@ The containerized application is hosted on an AWS EC2 instance.
 ### Application Access
 
 **Application URL:**
-(http://16.178.218.36/)
+http://16.178.218.36/
 
 **Health Check URL:**
-(https://16.178.218.36/health)
+http://16.178.218.36/health
 
 ## 10. Validation Results
 
@@ -243,8 +241,8 @@ The following implementation checks were successfully completed:
 | Docker Hub image publishing | Passed |
 | GitHub Actions Build and Test job | Passed |
 | GitHub Actions Docker Build and Push job | Passed |
-| EC2 application accessibility | Passed |
-| Application health check | Passed |
+| EC2 application HTTP response verified through AWS CloudShell | Passed (HTTP 200) |
+| Application health endpoint verified through AWS CloudShell | Passed (HTTP 200) |
 
 ## 11. Implementation Notes and Alternatives
 
