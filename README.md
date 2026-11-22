@@ -21,36 +21,54 @@ The project covers:
 - Cloud deployment using AWS EC2
 - Application health verification
 
-## 2. Architecture
 
-The project follows this application delivery workflow:
+````
+## Architecture
+
+The project consists of two main workflows: CI/CD and application deployment.
+
+### CI/CD Workflow
 
 ```text
-                 Developer
-                     |
-                     v
-              GitHub Repository
-                     |
-                     v
-               GitHub Actions
-                     |
-          +----------+----------+
-          |                     |
-          v                     v
-     Build & Test        Docker Build & Push
-          |                     |
-          v                     v
-      Pytest Tests           Docker Hub
-                                |
-                                v
-                             AWS EC2
-                                |
-                                v
-                         Docker Container
-                                |
-                                v
-                         Flask Application
+Developer
+    |
+    v
+GitHub Repository
+    |
+    v
+GitHub Actions
+    |
+    +----> Install Dependencies
+    |
+    +----> Run Pytest Tests
+    |
+    +----> Build Docker Image
+    |
+    +----> Push Image to Docker Hub
 ```
+
+### Application Deployment
+
+```text
+User / Browser
+      |
+      v
+AWS EC2 Instance
+(Amazon Linux 2023)
+      |
+      v
+Docker Container
+      |
+      v
+Flask Task Manager
+(Container Port: 5000)
+      |
+      v
+EC2 Port 80
+```
+
+The Docker container runs the Flask application on port 5000, mapped to port 80 on the EC2 instance.
+````
 
 ## 3. Technology Stack
 
