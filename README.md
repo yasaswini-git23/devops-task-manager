@@ -1,4 +1,3 @@
-# devops-task-manager
 # DevOps Task Manager
 ### Containerized Flask Application | CI/CD | AWS EC2
 # DevOps Task Manager
