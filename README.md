@@ -209,12 +209,10 @@ The containerized application is hosted on an AWS EC2 instance.
 ### Application Access
 
 **Application URL:**
-
-[http://YOUR_EC2_PUBLIC_IPV4/](http://16.178.218.36/)
+(http://16.178.218.36/)
 
 **Health Check URL:**
-
-[http://YOUR_EC2_PUBLIC_IPV4/health](https://16.178.218.36/health)
+(https://16.178.218.36/health)
 
 Replace `YOUR_EC2_PUBLIC_IPV4` with the actual public IPv4 address of the EC2 instance.
 
