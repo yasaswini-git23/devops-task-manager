@@ -21,8 +21,6 @@ The project covers:
 - Cloud deployment using AWS EC2
 - Application health verification
 
-
-````
 ## Architecture
 
 The project consists of two main workflows: CI/CD and application deployment.
@@ -68,7 +66,6 @@ EC2 Port 80
 ```
 
 The Docker container runs the Flask application on port 5000, mapped to port 80 on the EC2 instance.
-````
 ````
 
 ## 3. Technology Stack
